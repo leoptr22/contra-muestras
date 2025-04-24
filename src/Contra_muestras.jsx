@@ -203,7 +203,7 @@ const styles = {
     margin: '0 auto',
     padding: '20px',
     fontFamily: 'Arial, sans-serif',
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#b48383',
     borderRadius: '8px',
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
   },
