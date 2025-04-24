@@ -17,7 +17,7 @@ const Contra_muestras = () => {
 
   const enviarDatos = async () => {
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbwq76Uee0a8zeYeGZvtpFOhxNgtZw91jZNYOBFkEUZ_hRI7dALq6GwMOawToOSIW-nr/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbzCs7foDN7k_E1ceHClNLXrw9UKqOybv_5jpj4Qcfc1Oz4dAHWsPnESUju3u3URHpsC/exec", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
