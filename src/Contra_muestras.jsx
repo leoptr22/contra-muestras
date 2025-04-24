@@ -25,6 +25,10 @@ const Contra_muestras = () => {
         }
       });
 
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const resultado = await response.json();
       console.log("Respuesta del servidor:", resultado);
 
@@ -44,7 +48,7 @@ const Contra_muestras = () => {
       }
     } catch (error) {
       console.error("Hubo un error:", error);
-      alert("❌ Error de red o CORS. Ver consola.");
+      alert("❌ Error de red o CORS. Ver consola. Detalles: " + error.message);
     }
   };
 
