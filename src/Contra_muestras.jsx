@@ -25,8 +25,9 @@ const Contra_muestras = () => {
         }
       });
 
+      // Verificando la respuesta del servidor
       const resultado = await response.json();
-      console.log("Respuesta del servidor:", resultado);
+      console.log("Respuesta completa del servidor:", resultado); // Log para ver la respuesta completa
 
       if (resultado.status === "success") {
         alert("✅ Datos guardados correctamente.");
