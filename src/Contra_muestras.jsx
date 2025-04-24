@@ -17,7 +17,7 @@ const Contra_muestras = () => {
 
   const enviarDatos = async () => {
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbzCs7foDN7k_E1ceHClNLXrw9UKqOybv_5jpj4Qcfc1Oz4dAHWsPnESUju3u3URHpsC/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbyMKuWD6U1RWMR3T56iGNkyyrnuJYP9JOa3ErN8uD88IbE3-fXf-EVGlViQLZM2xi2a/exec", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
@@ -25,9 +25,8 @@ const Contra_muestras = () => {
         }
       });
 
-      // Verificando la respuesta del servidor
       const resultado = await response.json();
-      console.log("Respuesta completa del servidor:", resultado); // Log para ver la respuesta completa
+      console.log("Respuesta del servidor:", resultado);
 
       if (resultado.status === "success") {
         alert("✅ Datos guardados correctamente.");
@@ -55,7 +54,7 @@ const Contra_muestras = () => {
       <form onSubmit={(e) => { e.preventDefault(); enviarDatos(); }}>
         <input type="text" name="producto" placeholder="Producto" value={formData.producto} onChange={handleChange} required />
         <input type="text" name="formato" placeholder="Formato" value={formData.formato} onChange={handleChange} required />
-        <input type="date" name="fechaEnvasado" placeholder="Fecha de Envasado" value={formData.fechaEnvasado} onChange={handleChange} required />
+        <input type="date" name="fechaEnvasado" value={formData.fechaEnvasado} onChange={handleChange} required />
         <input type="text" name="lote" placeholder="Lote" value={formData.lote} onChange={handleChange} required />
         <input type="text" name="caja" placeholder="Caja" value={formData.caja} onChange={handleChange} required />
         <input type="text" name="numeroPallet" placeholder="Número de Pallet" value={formData.numeroPallet} onChange={handleChange} required />
