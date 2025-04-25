@@ -162,6 +162,8 @@ const ContraMuestras = () => {
           />
         </div>
 
+        
+
         <div style={styles.formGroup}>
           <label style={styles.label}>Número de Pallet:</label>
           <input
@@ -231,7 +233,7 @@ const styles = {
     borderRadius: '4px',
     border: '1px solid #ddd',
     fontSize: '16px',
-    backgroundColor: '#fff'
+    backgroundColor: '#a74f4f'
   },
   button: {
     padding: '12px',
