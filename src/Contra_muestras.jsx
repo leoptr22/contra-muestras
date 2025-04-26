@@ -1,6 +1,6 @@
-
 import { useState } from "react";
 import './Contramuestras.css';
+
 export default function FormularioMuestras() {
   const [formulario, setFormulario] = useState({
     Producto: '',
@@ -45,30 +45,43 @@ export default function FormularioMuestras() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Acá enviarías los datos
-    setMensaje('¡Formulario enviado con éxito!');
-    setFormulario({
-      Producto: '',
-      Formato: '',
-      FechaEnvasado: '',
-      Lote: '',
-      Caja: '',
-      NumeroPallet: '',
-      Observaciones: '',
-    });
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbz_h9AAOp-_m2sJTT9gAVq9CME-5QIUboHqk-vWrZkGiWMRaSSjrI4t014Tbyv3wmqn/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formulario),
+      });
+
+      const data = await response.json();
+      console.log('Respuesta del servidor:', data);
+
+      setMensaje("¡Producto cargado con éxito!");
+      setFormulario({
+        Producto: '',
+        Formato: '',
+        FechaEnvasado: '',
+        Lote: '',
+        Caja: '',
+        NumeroPallet: '',
+        Observaciones: '',
+      });
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+      setMensaje("Hubo un error al enviar el formulario.");
+    }
   };
 
   return (
     <div className="formulario">
       <h2 className="titulo">Formulario de Productos</h2>
       <form onSubmit={handleSubmit} className="form-grid">
-        
-        {/* Producto - ahora desplegable */}
+
         <select 
           className="input"
-          
           name="Producto"
           value={formulario.Producto}
           onChange={handleChange}
@@ -82,7 +95,6 @@ export default function FormularioMuestras() {
           ))}
         </select>
 
-        {/* Formato - ahora desplegable */}
         <select 
           className="input"
           name="Formato"
@@ -90,7 +102,7 @@ export default function FormularioMuestras() {
           onChange={handleChange}
           required
         >
-          <option value="" >Seleccione un formato</option>
+          <option value="">Seleccione un formato</option>
           {formatos.map((formato, index) => (
             <option key={index} value={formato}>
               {formato}
@@ -98,30 +110,25 @@ export default function FormularioMuestras() {
           ))}
         </select>
 
-        {/* Fecha Envasado */}
         <input 
           className="input" 
           type="date"
-          placeholder="Fecha de envasado" 
           name="FechaEnvasado" 
           value={formulario.FechaEnvasado} 
           onChange={handleChange} 
           required 
         />
 
-        {/* Lote */}
         <input 
           className="input" 
           type="text" 
           name="Lote"
-       
           placeholder="Lote" 
           value={formulario.Lote} 
           onChange={handleChange} 
           required 
         />
 
-        {/* Caja */}
         <input 
           className="input" 
           type="text" 
@@ -132,7 +139,6 @@ export default function FormularioMuestras() {
           required 
         />
 
-        {/* Número de Pallet */}
         <input 
           className="input" 
           type="text" 
@@ -143,7 +149,6 @@ export default function FormularioMuestras() {
           required 
         />
 
-        {/* Observaciones */}
         <textarea 
           className="textarea" 
           name="Observaciones" 
@@ -152,7 +157,6 @@ export default function FormularioMuestras() {
           onChange={handleChange} 
         />
 
-        {/* Botón Enviar */}
         <button type="submit" className="submit-btn">Enviar</button>
 
       </form>
