@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './contramuestras.css'; // Asegúrate de importar el archivo CSS
+import './Contramuestras.css'; // Asegúrate de importar el archivo CSS
 
 export default function FormularioMuestras() {
   const [formulario, setFormulario] = useState({
