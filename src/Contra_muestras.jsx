@@ -1,56 +1,131 @@
 import { useState } from "react";
+import './contramuestras.css'; // Asegúrate de importar el archivo CSS
 
 export default function FormularioMuestras() {
   const [formulario, setFormulario] = useState({
-    producto: "",
-    formato: "",
-    fechaEnvasado: "",
-    lote: "",
-    caja: "",
-    numeroPallet: "",
-    observaciones: ""
+    Producto: "",
+    Formato: "",
+    FechaEnvasado: "",
+    Lote: "",
+    Caja: "",
+    NumeroPallet: "",
+    Observaciones: ""
   });
+  
+  const [mensaje, setMensaje] = useState(""); // Estado para el mensaje de éxito
 
   const handleChange = (e) => {
-    setFormulario({
-      ...formulario,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormulario(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const url = "https://script.google.com/macros/s/AKfycbyMKuWD6U1RWMR3T56iGNkyyrnuJYP9JOa3ErN8uD88IbE3-fXf-EVGlViQLZM2xi2a/exec"; // URL del script desplegado
-
     try {
-      const response = await fetch(url, {
-        method: "POST",
+      const response = await fetch('https://script.google.com/macros/s/AKfycbz_h9AAOp-_m2sJTT9gAVq9CME-5QIUboHqk-vWrZkGiWMRaSSjrI4t014Tbyv3wmqn/exec', {
+        method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded', // Asegura formato correcto
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: new URLSearchParams(formulario), // Envía los datos en formato URL
+        body: new URLSearchParams(formulario),
       });
 
       const data = await response.json();
-      console.log("Respuesta del servidor:", data);
-      alert(data.message);
+      console.log('Respuesta del servidor:', data);
+
+      // Mostrar el mensaje de éxito
+      setMensaje("Producto cargado con éxito");
+
+      // Vaciar el formulario
+      setFormulario({
+        Producto: "",
+        Formato: "",
+        FechaEnvasado: "",
+        Lote: "",
+        Caja: "",
+        NumeroPallet: "",
+        Observaciones: ""
+      });
+
     } catch (error) {
-      console.error("Error al enviar los datos:", error);
-      alert("Ocurrió un error al enviar los datos.");
+      console.error('Error al enviar el formulario:', error);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "8px", width: "300px" }}>
-      <input type="text" name="producto" placeholder="Producto" onChange={handleChange} required />
-      <input type="text" name="formato" placeholder="Formato" onChange={handleChange} required />
-      <input type="date" name="fechaEnvasado" onChange={handleChange} required />
-      <input type="text" name="lote" placeholder="Lote" onChange={handleChange} required />
-      <input type="text" name="caja" placeholder="Caja" onChange={handleChange} required />
-      <input type="text" name="numeroPallet" placeholder="Número de Pallet" onChange={handleChange} required />
-      <textarea name="observaciones" placeholder="Observaciones" onChange={handleChange} />
-      <button type="submit">Enviar</button>
-    </form>
+    <div className="formulario">
+      <form 
+        onSubmit={handleSubmit}
+      >
+        <input 
+          className="input" 
+          type="text" 
+          name="Producto" 
+          placeholder="Producto" 
+          value={formulario.Producto} 
+          onChange={handleChange} 
+          required 
+        />
+        <input 
+          className="input" 
+          type="text" 
+          name="Formato" 
+          placeholder="Formato" 
+          value={formulario.Formato} 
+          onChange={handleChange} 
+          required 
+        />
+        <input 
+          className="input" 
+          type="date" 
+          name="FechaEnvasado" 
+          value={formulario.FechaEnvasado} 
+          onChange={handleChange} 
+          required 
+        />
+        <input 
+          className="input" 
+          type="text" 
+          name="Lote" 
+          placeholder="Lote" 
+          value={formulario.Lote} 
+          onChange={handleChange} 
+          required 
+        />
+        <input 
+          className="input" 
+          type="text" 
+          name="Caja" 
+          placeholder="Caja" 
+          value={formulario.Caja} 
+          onChange={handleChange} 
+          required 
+        />
+        <input 
+          className="input" 
+          type="text" 
+          name="NumeroPallet" 
+          placeholder="Número de Pallet" 
+          value={formulario.NumeroPallet} 
+          onChange={handleChange} 
+          required 
+        />
+        <textarea 
+          className="textarea" 
+          name="Observaciones" 
+          placeholder="Observaciones" 
+          value={formulario.Observaciones} 
+          onChange={handleChange} 
+        />
+        <button type="submit" className="submit-btn">Enviar</button>
+      </form>
+
+      {/* Mostrar el mensaje de éxito */}
+      {mensaje && <div className="success-message">{mensaje}</div>}
+    </div>
   );
 }
