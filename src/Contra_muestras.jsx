@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Contramuestras.css'; // Asegúrate de importar el archivo CSS
+import './Contramuestras.css'; 
 
 export default function FormularioMuestras() {
   const [formulario, setFormulario] = useState({
@@ -12,7 +12,7 @@ export default function FormularioMuestras() {
     Observaciones: ""
   });
   
-  const [mensaje, setMensaje] = useState(""); // Estado para el mensaje de éxito
+  const [mensaje, setMensaje] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,10 +37,8 @@ export default function FormularioMuestras() {
       const data = await response.json();
       console.log('Respuesta del servidor:', data);
 
-      // Mostrar el mensaje de éxito
       setMensaje("Producto cargado con éxito");
 
-      // Vaciar el formulario
       setFormulario({
         Producto: "",
         Formato: "",
@@ -58,9 +56,9 @@ export default function FormularioMuestras() {
 
   return (
     <div className="formulario">
-      <form 
-        onSubmit={handleSubmit}
-      >
+      <form className="form-grid" onSubmit={handleSubmit}>
+        <h2>Registro de Muestras</h2>
+
         <input 
           className="input" 
           type="text" 
@@ -121,11 +119,11 @@ export default function FormularioMuestras() {
           value={formulario.Observaciones} 
           onChange={handleChange} 
         />
+        
         <button type="submit" className="submit-btn">Enviar</button>
+        
+        {mensaje && <div className="success-message">{mensaje}</div>}
       </form>
-
-      {/* Mostrar el mensaje de éxito */}
-      {mensaje && <div className="success-message">{mensaje}</div>}
     </div>
   );
 }
