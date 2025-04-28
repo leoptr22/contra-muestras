@@ -9,6 +9,69 @@ body {
     background: linear-gradient(135deg, #b8bbc0, #23272a);
     font-family: 'Arial', sans-serif;
 }
+
+/* Estilos generales para los botones */
+button {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  /* Estilo para el botón de envío */
+  .submit-btn {
+    background-color: #4CAF50; /* Color verde */
+    color: white;
+  }
+  
+  .submit-btn:hover {
+    background-color: #45a049; /* Color verde más oscuro al pasar el cursor */
+    transform: scale(1.05); /* Efecto de aumentar el tamaño del botón */
+  }
+  
+  .submit-btn:active {
+    background-color: #388e3c; /* Color verde más oscuro al hacer clic */
+    transform: scale(1); /* Vuelve a su tamaño original */
+  }
+  
+  /* Estilo para el botón de ver la hoja de cálculo */
+  .view-button {
+    background-color: #6a4603; /* Color azul */
+    color: white;
+    margin-top: 20px; /* Separación entre botones */
+  }
+  
+  .view-button:hover {
+    background-color: #0056b3; /* Color azul más oscuro al pasar el cursor */
+    transform: scale(1.05);
+  }
+  
+  .view-button:active {
+    background-color: #003f7f; /* Color azul aún más oscuro al hacer clic */
+    transform: scale(1);
+  }
+  
+  /* Estilo para el botón con fondo rojo (si se requiere) */
+  .cancel-btn {
+    background-color: #f44336; /* Color rojo */
+    color: white;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #e53935; /* Rojo más oscuro al pasar el cursor */
+    transform: scale(1.05);
+  }
+  
+  .cancel-btn:active {
+    background-color: #d32f2f; /* Rojo más oscuro al hacer clic */
+    transform: scale(1);
+  }
+  
   
 /* Placeholder gris oscuro */
 .input::placeholder, .textarea::placeholder {
@@ -68,6 +131,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
   
 .submit-btn:hover {
     background-color: #0b5ed7;
@@ -84,9 +148,67 @@ body {
 }
   
 /* Responsive */
-@media (max-width: 500px) {
+@media (max-width: 1220px) {
+    /* Contenedor del formulario */
     .formulario {
-        padding: 20px;
-        margin: 20px;
+        width: 100%; /* Hace que el formulario ocupe todo el ancho de la pantalla */
+        max-width: 700px; /* Limita el tamaño máximo del formulario */
+        padding: 30px; /* Añade padding para darle espacio */
+        margin: 0 auto; /* Centra el formulario */
+        box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+        height: 100vh; /* Asegura que el formulario ocupe toda la altura de la pantalla */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Asegura que los elementos se distribuyan uniformemente */
+    }
+
+    /* Título */
+    .form-grid h2 {
+        font-size: 24px; /* Ajuste del tamaño del título */
+        text-align: center; /* Centra el título */
+        margin-bottom: 20px; /* Separación inferior */
+    }
+
+    /* Campos de entrada (input, textarea y select) */
+    .input, .textarea, select {
+        padding: 12px; /* Padding adecuado para los campos */
+        font-size: 16px; /* Tamaño de la fuente para mejorar la legibilidad */
+        width: 100%; /* Hace que los campos ocupen todo el ancho disponible */
+        margin-bottom: 12px; /* Espaciado entre los campos */
+        box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+    }
+
+    /* Botones */
+    .submit-btn, .view-button, .cancel-btn {
+        padding: 14px; /* Aumenta el tamaño de los botones */
+        font-size: 16px; /* Tamaño de la fuente para los botones */
+        width: 100%; /* Hace que los botones ocupen todo el ancho del formulario */
+        margin-bottom: 12px; /* Separación entre los botones */
+        box-sizing: border-box;
+    }
+
+    /* Mensaje de éxito */
+    .success-message {
+        font-size: 16px; /* Ajusta el tamaño del texto del mensaje */
+        background: #d1e7dd;
+        color: #0f5132;
+        padding: 12px;
+        border-radius: 8px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    /* Asegura que los botones estén al final si hay muchos campos */
+    .form-grid {
+        flex: 1; /* Hace que el contenido ocupe todo el espacio disponible */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* Para una mejor visualización en dispositivos grandes, aseguramos que el contenido no se "desborde" */
+    .formulario > * {
+        max-width: 100%;
     }
 }
+
