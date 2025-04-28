@@ -170,35 +170,3 @@ button:active {
         font-size: 14px; /* Reducir el tamaño del texto del mensaje */
     }
 }
-/* Ajustes para pantallas de resolución 1220x2710 o dispositivos de tamaño mediano */
-@media (max-width: 1220px) and (min-width: 768px) {
-    /* Contenedor del formulario */
-    .formulario {
-        width: 80%; /* Aumenta el ancho a un 80% del contenedor padre */
-        max-width: 600px; /* Limita el tamaño máximo del formulario */
-        padding: 25px; /* Aumenta un poco el padding */
-        margin: 20px auto; /* Centra el formulario con márgenes */
-    }
-
-    /* Título */
-    .form-grid h2 {
-        font-size: 22px; /* Aumenta un poco el tamaño del título */
-    }
-
-    /* Campos de entrada (input, textarea y select) */
-    .input, .textarea, select {
-        padding: 12px; /* Padding adecuado para pantallas medianas */
-        font-size: 16px; /* Tamaño de fuente ligeramente mayor */
-    }
-
-    /* Botones */
-    .submit-btn, .view-button, .cancel-btn {
-        padding: 12px; /* Padding cómodo para botones */
-        font-size: 16px; /* Aumenta ligeramente el tamaño de la fuente de los botones */
-    }
-
-    /* Mensaje de éxito */
-    .success-message {
-        font-size: 16px; /* Aumenta ligeramente el tamaño del mensaje */
-    }
-}
