@@ -162,12 +162,13 @@ button {
         justify-content: space-between; /* Asegura que los elementos se distribuyan uniformemente */
     }
 
-    /* Título */
     .form-grid h2 {
         font-size: 24px; /* Ajuste del tamaño del título */
         text-align: center; /* Centra el título */
-        margin-bottom: 20px; /* Separación inferior */
+        margin-top: 10px; /* Reduce el margen superior */
+        margin-bottom: 10px; /* Reduce el margen inferior */
     }
+    
 
     /* Campos de entrada (input, textarea y select) */
     .input, .textarea, select {
