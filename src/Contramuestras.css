@@ -148,7 +148,8 @@ button:active {
     .form-grid h2 {
         font-size: 24px; /* Ajuste del tamaño del título */
         text-align: center; /* Centra el título */
-        margin-bottom: 20px; /* Separación inferior */
+        margin-bottom: 7%; /* Separación inferior */
+        margin-top: 7%;
     }
 
     /* Campos de entrada (input, textarea y select) */
@@ -156,7 +157,7 @@ button:active {
         padding: 12px; /* Padding adecuado para campos */
         font-size: 16px; /* Tamaño de la fuente ligeramente mayor */
         width: 100%; /* Asegura que los campos ocupen todo el ancho disponible */
-        margin-bottom: 12px; /* Espaciado entre campos */
+        margin-bottom: 7px; /* Espaciado entre campos */
         box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
     }
 
