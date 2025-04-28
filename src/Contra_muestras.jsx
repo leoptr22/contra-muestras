@@ -37,6 +37,11 @@ export default function FormularioMuestras() {
     "500 CC",
     "1 KG"
   ];
+   // Función para abrir el enlace de solo lectura
+   const abrirHojaDeCalculo = () => {
+    const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS5a4boHpF-FkSVH6HqawmLRBF7g7YP_SVD92i_zwq2xAH6Lkk1EV5u1TDQx3jp5X9nmmg5m0KyhDBN/pubhtml';
+    window.open(url, '_blank');
+  };
 
   const handleChange = (e) => {
     setFormulario({
@@ -160,6 +165,11 @@ export default function FormularioMuestras() {
         <button type="submit" className="submit-btn">Enviar</button>
 
       </form>
+
+       {/* Botón para ver la hoja de cálculo en solo lectura */}
+       <button onClick={abrirHojaDeCalculo} className="view-button">
+        Listado de lotes (Solo Lectura)
+      </button>
 
       {mensaje && <div className="success-message">{mensaje}</div>}
     </div>
