@@ -82,7 +82,7 @@ export default function FormularioMuestras() {
 
   return (
     <div className="formulario">
-      <h2 className="titulo">Formulario de Productos</h2>
+      <h2 className="titulo">Registro de lotes</h2>
       <form onSubmit={handleSubmit} className="form-grid">
 
         <select 
