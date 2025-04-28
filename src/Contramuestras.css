@@ -41,7 +41,7 @@ button {
   
   /* Estilo para el botón de ver la hoja de cálculo */
   .view-button {
-    background-color: #6a4603; /* Color azul */
+    background-color: #615f5c; /* Color azul */
     color: white;
     margin-top: 20px; /* Separación entre botones */
   }
@@ -152,8 +152,8 @@ button {
     /* Contenedor del formulario */
     .formulario {
         width: 100%; /* Hace que el formulario ocupe todo el ancho de la pantalla */
-        max-width: 700px; /* Limita el tamaño máximo del formulario */
-        padding: 30px; /* Añade padding para darle espacio */
+        max-width: 750px; /* Limita el tamaño máximo del formulario */
+        padding: 20px; /* Añade padding para darle espacio */
         margin: 0 auto; /* Centra el formulario */
         box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
         height: 100vh; /* Asegura que el formulario ocupe toda la altura de la pantalla */
