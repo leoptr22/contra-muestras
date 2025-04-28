@@ -134,50 +134,33 @@ button:active {
 
 /* Responsive */
 
-@media (max-width: 1220px) {
+@media (max-width: 500px) {
     /* Contenedor del formulario */
     .formulario {
-        width: 95%; /* Ajusta el formulario al 95% del ancho de la pantalla */
-        max-width: 700px; /* Limita el tamaño máximo del formulario */
-        padding: 30px; /* Añade más padding para hacerlo espacioso */
-        margin: 20px auto; /* Centra el formulario con márgenes automáticos */
-        box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+        width: 97%; /* Ajusta el formulario al 95% del ancho de la pantalla */
+        padding: 15px;
+        margin: 10px auto; /* Centrado automático */
     }
 
     /* Título */
     .form-grid h2 {
-        font-size: 24px; /* Ajuste del tamaño del título */
-        text-align: center; /* Centra el título */
-        margin-bottom: 7%; /* Separación inferior */
-        margin-top: 7%;
+        font-size: 20px; /* Ajusta el tamaño del título */
     }
 
     /* Campos de entrada (input, textarea y select) */
     .input, .textarea, select {
-        padding: 12px; /* Padding adecuado para campos */
-        font-size: 16px; /* Tamaño de la fuente ligeramente mayor */
-        width: 100%; /* Asegura que los campos ocupen todo el ancho disponible */
-        margin-bottom: 7px; /* Espaciado entre campos */
-        box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+        padding: 10px; /* Espaciado adecuado para campos */
+        font-size: 14px; /* Reducir ligeramente el tamaño de la fuente */
     }
 
     /* Botones */
     .submit-btn, .view-button, .cancel-btn {
-        padding: 14px; /* Padding mayor para los botones */
-        font-size: 16px; /* Tamaño de fuente más grande para botones */
-        width: 100%; /* Hace que los botones ocupen el ancho completo */
-        margin-bottom: 12px; /* Espaciado entre botones */
-        box-sizing: border-box;
+        padding: 12px; /* Ajustar el tamaño de los botones */
+        font-size: 14px; /* Tamaño de fuente ajustado */
     }
 
     /* Mensaje de éxito */
     .success-message {
-        font-size: 16px; /* Ajuste del tamaño del texto del mensaje */
-        background: #d1e7dd;
-        color: #0f5132;
-        padding: 12px;
-        border-radius: 8px;
-        text-align: center;
-        margin-top: 10px;
+        font-size: 14px; /* Tamaño de texto del mensaje */
     }
 }
