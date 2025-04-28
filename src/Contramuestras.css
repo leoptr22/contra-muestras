@@ -139,3 +139,34 @@ button:active {
         margin: 20px;
     }
 }
+/* Ajustes para dispositivos móviles */
+@media (max-width: 500px) {
+    /* Contenedor del formulario */
+    .formulario {
+        width: 90%; /* Aumenta el ancho en lugar de tener un máximo de 400px */
+        padding: 15px;
+        margin: 10px;
+    }
+
+    /* Título */
+    .form-grid h2 {
+        font-size: 20px; /* Reducir el tamaño del título */
+    }
+
+    /* Campos de entrada (input, textarea y select) */
+    .input, .textarea, select {
+        padding: 10px; /* Reducir el padding */
+        font-size: 14px; /* Reducir el tamaño de la fuente */
+    }
+
+    /* Botones */
+    .submit-btn, .view-button, .cancel-btn {
+        padding: 10px; /* Reducir el padding de los botones */
+        font-size: 14px; /* Reducir el tamaño de la fuente de los botones */
+    }
+
+    /* Mensaje de éxito */
+    .success-message {
+        font-size: 14px; /* Reducir el tamaño del texto del mensaje */
+    }
+}
