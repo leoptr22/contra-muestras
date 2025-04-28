@@ -79,8 +79,8 @@ button {
 }
 
 .formulario {
-    width: 90%; /* Asegura que el formulario ocupe el 90% del ancho de la pantalla, con un margen */
-    max-width: 700px; /* Limita el ancho máximo del formulario */
+    width: 100%; /* Asegura que el formulario ocupe el 90% del ancho de la pantalla, con un margen */
+    max-width: 800px; /* Limita el ancho máximo del formulario */
     background: #a6a9a7;
     padding: 20px; /* Reducido para ajustarse mejor */
     border-radius: 16px;
