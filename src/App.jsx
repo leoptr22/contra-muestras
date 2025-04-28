@@ -1,5 +1,7 @@
 import React from 'react';
 import Formulario from './Contra_muestras.jsx';
+import UltimoLote from './UltimoLote.jsx';
+
 
 function App() {
   return (
@@ -7,6 +9,7 @@ function App() {
       <header className="App-header">
       </header>
       <main>
+      <UltimoLote /> 
         <Formulario />  
       </main>
     </div>
