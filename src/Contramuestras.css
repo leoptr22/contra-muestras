@@ -9,72 +9,7 @@ body {
     background: linear-gradient(135deg, #b8bbc0, #23272a);
     font-family: 'Arial', sans-serif;
 }
-
-/* Estilos generales para los botones */
-button {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-    display: inline-block;
-}
-
-/* Estilos comunes para botones al pasar el cursor y hacer clic */
-button:hover {
-    transform: scale(1.05); /* Efecto de aumentar el tamaño del botón */
-}
-
-button:active {
-    transform: scale(1); /* Vuelve a su tamaño original */
-}
-
-/* Estilo para el botón de envío */
-.submit-btn {
-    background-color: #4CAF50; /* Color verde */
-    color: white;
-}
-
-.submit-btn:hover {
-    background-color: #45a049; /* Color verde más oscuro al pasar el cursor */
-}
-
-.submit-btn:active {
-    background-color: #388e3c; /* Color verde más oscuro al hacer clic */
-}
-
-/* Estilo para el botón de ver la hoja de cálculo */
-.view-button {
-    background-color: #796f6f; /* Color gris */
-    color: white;
-    margin-top: 20px; /* Separación entre botones */
-}
-
-.view-button:hover {
-    background-color: #0056b3; /* Color azul más oscuro al pasar el cursor */
-}
-
-.view-button:active {
-    background-color: #003f7f; /* Color azul aún más oscuro al hacer clic */
-}
-
-/* Estilo para el botón con fondo rojo */
-.cancel-btn {
-    background-color: #f44336; /* Color rojo */
-    color: white;
-}
-
-.cancel-btn:hover {
-    background-color: #e53935; /* Rojo más oscuro al pasar el cursor */
-}
-
-.cancel-btn:active {
-    background-color: #d32f2f; /* Rojo más oscuro al hacer clic */
-}
-
+  
 /* Placeholder gris oscuro */
 .input::placeholder, .textarea::placeholder {
     color: #292727; /* Gris oscuro */
@@ -89,14 +24,14 @@ button:active {
     border-radius: 16px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
 }
-
+  
 /* Formulario interno */
 .form-grid {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-
+  
 /* Título */
 .form-grid h2 {
     margin-bottom: 20px;
@@ -104,7 +39,7 @@ button:active {
     text-align: center;
     color: #c5bebe;
 }
-
+  
 /* Inputs, textarea y select */
 .input, .textarea, select {
     padding: 12px;
@@ -121,7 +56,23 @@ button:active {
     border-color: #0d6efd;
     outline: none;
 }
-
+  
+/* Botón */
+.submit-btn {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.submit-btn:hover {
+    background-color: #0b5ed7;
+}
+  
 /* Mensaje de éxito */
 .success-message {
     margin-top: 10px;
@@ -131,36 +82,11 @@ button:active {
     border-radius: 8px;
     text-align: center;
 }
-
+  
 /* Responsive */
-
 @media (max-width: 500px) {
-    /* Contenedor del formulario */
     .formulario {
-        width: 97%; /* Ajusta el formulario al 95% del ancho de la pantalla */
-        padding: 15px;
-        margin: 10px auto; /* Centrado automático */
-    }
-
-    /* Título */
-    .form-grid h2 {
-        font-size: 20px; /* Ajusta el tamaño del título */
-    }
-
-    /* Campos de entrada (input, textarea y select) */
-    .input, .textarea, select {
-        padding: 10px; /* Espaciado adecuado para campos */
-        font-size: 14px; /* Reducir ligeramente el tamaño de la fuente */
-    }
-
-    /* Botones */
-    .submit-btn, .view-button, .cancel-btn {
-        padding: 12px; /* Ajustar el tamaño de los botones */
-        font-size: 14px; /* Tamaño de fuente ajustado */
-    }
-
-    /* Mensaje de éxito */
-    .success-message {
-        font-size: 14px; /* Tamaño de texto del mensaje */
+        padding: 20px;
+        margin: 20px;
     }
 }
